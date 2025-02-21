@@ -42,9 +42,44 @@ project-root
 ---
 
 ## 📊 Insights from Visualizations
-- **Top 5 Genre Popularity Across Top 10 Production Countries**:
-  - The United States leads in popularity for genres like Drama and Comedy.
-  - France and Italy have significant popularity for Documentary and Romance genres.
+- **Box Office Revenue vs Budget with Popularity**:
+~~~
+import plotly.express as px
+
+# Load your dataset (replace with the appropriate file path)
+file_path = '/content/feature_engineered_movie_data.csv'
+movie_data = pd.read_csv(file_path)
+
+# Select relevant columns
+bubble_data = movie_data[['budget', 'revenue', 'popularity', 'genres', 'original_title']]
+
+# Create the bubble chart
+fig = px.scatter(
+    bubble_data,
+    x='budget',                # X-axis: Budget
+    y='revenue',               # Y-axis: Box Office Revenue
+    size='popularity',         # Bubble Size: Popularity
+    color='genres',             # Bubble Color: Genre
+    hover_name='original_title', # Tooltip: Movie Name
+    title='Box Office Revenue vs Budget with Popularity',
+    labels={'budget': 'Budget', 'revenue': 'Revenue'},
+    size_max=60                # Max size of bubbles
+)
+
+# Customize the chart layout
+fig.update_layout(
+    title_font=dict(size=20, family='Arial', color='black'),
+    xaxis=dict(title='Budget (in $)', tickprefix='$', showgrid=True),
+    yaxis=dict(title='Revenue (in $)', tickprefix='$', showgrid=True),
+    paper_bgcolor='rgb(240, 242, 245)'  # Background color
+)
+
+# Show the chart
+fig.show()
+
+~~~
+[Uploading Predictive Analytics for Movie Box Office Success Using Data-Driven Insights - Colab.html…]()
+
 
 ---
 
@@ -78,33 +113,6 @@ project-root
 
 ---
 
-## 🚀 Future Enhancements
-- **Interactive Dashboard**: Implementation using Streamlit for live data exploration.
-- **Advanced Predictive Models**: Incorporating ensemble methods for better accuracy.
-- **Expanded Dataset**: Including more data sources to enrich insights.
 
----
-
-## 🤝 Contributing
-We welcome contributions to make this project even better! Feel free to open issues or submit pull requests. Make sure to follow the contribution guidelines.
-
----
-
-## 📝 License
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 🧑‍💻 Author
-**Syed Muhammed Zahi**
-- [GitHub](https://github.com/your-username)
-- [LinkedIn](https://www.linkedin.com/in/your-profile)
-
----
-
-## 🎯 Acknowledgments
-Special thanks to my mentor for guidance and inspiration throughout this project.
-
----
 
 > "Movies are a window into the culture of the world; let data be the key to understanding them!"
