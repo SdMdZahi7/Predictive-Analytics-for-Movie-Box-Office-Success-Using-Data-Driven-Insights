@@ -183,7 +183,7 @@ plt.show()
 ~~~
 ![image](https://github.com/user-attachments/assets/35cea033-d6c4-4fb4-9396-54c29ef550f3)
 
-- **Distribution of Movies Across ROI Categories**:
+- **Top 5 Genre Popularity Across Top 10 Production Countries**:
 ~~~
 import pandas as pd
 import plotly.express as px
