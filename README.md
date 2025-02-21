@@ -78,8 +78,9 @@ fig.update_layout(
 fig.show()
 
 ~~~
-[Uploading Predictive Analytics for Movie Box Office Success Using Data-Driven Insights - Colab.html…]()
+![image](https://github.com/user-attachments/assets/d2d8d8cd-dd8c-4d77-bf36-9001a60c30ff)
 
+- **Box Office Revenue vs Budget with Popularity**:
 
 ---
 
